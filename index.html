@@ -3,8 +3,55 @@
 
     </head>
     <body>
-        hallo iedereen!!
+       
         <script>
+            
+    var zoekGetal, i;
+
+    // Hij maakt twee tabellen. In een komt het getal dat de persoon heeft gezegt. En in de andere tabel komt op hoeveelste kolom het getal staat.
+    var getallenRij = new Array(10);
+
+    // Hij maakt een kolom met getallen van 0 t/m 9. in 'getallenrij'
+    for (i = 0; i <= 9; i++) {
+        getallenRij[i] = Math.floor(Math.random() * 100);
+
+        // Hij kiest random getallen tot 100. Die worden ingevuld bij de kolommen van 0 t/m 9.
+    }
+    window.alert("Welk getal wil je zoeken: ");
+
+    // In de console wordt gevraagd: "welk getal wil je zoeken'
+    zoekGetal = Number(window.prompt('Enter a value for zoekGetal'));
+
+    // je kan het getal invoeren in de console. Je getal wordt in de kolom 'zoekgetal' ingevuld.
+    i = 0;
+
+    // i begint bij 0.
+    // Wat moet er in de WHILE-lus komen om het algoritme te laten werken?
+    while (getallenRij[i] != zoekGetal && i < 9) {
+
+        // De whilelus zoekt of het getal dat gegeven is in een van de kolommen staat. Hij gaat telkens langs elke kolom om te kijken of het hetzelfde getal is.
+        i = i + 1;
+
+        // wanneer het getal niet in de eerste kolom staat komt er telkens i+1. Zo wordt de kolom nummer steeds hoger.
+    }
+    if (i == 9) {
+
+        // Wanneer het wel i=9 is gaat het naar de true kant. Hier staat weer een if-statement.
+        if (getallenRij[9] == zoekGetal) {
+
+            // Wanneer het zoekgetal hetzelfde is als 9 gaat het naar de true kant. Hier wordt vertelt waar het zoekgetal staat. Namelijk plek 9.
+            window.alert(zoekGetal.ToString() + " staat op plek " + i);
+        } else {
+
+            // Wanneer het zoekgetal niet 9 is wordt er gezegt dat het zoekgetal niet gevonden is. Want het zoekgetal is niet hetzelfde als het getal bij 9.
+            window.alert("Getal niet gevonden.");
+        }
+    } else {
+
+        // Wanneer i niet 9 is wordt er gezegd waar het gekozen getal staat in de kolom.
+        window.alert(zoekGetal.ToString() + " staat op plek " + i);
+    }
+
 
         </script>
     </body>
